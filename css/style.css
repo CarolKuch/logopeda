@@ -1,0 +1,135 @@
+body {
+    font-family: "Kalam", cursive;
+    color: #2b404d;
+    width: 100%;
+    margin: 0px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 5vh 20vh 70vh 5vh;
+    grid-template-areas:
+        "top-bar top-bar top-bar top-bar top-bar top-bar top-bar top-bar"
+        "header header header main-menu main-menu main-menu main-menu main-menu"
+        "main-img main-img main-img main-img main-img main-img main-img main-img"
+        "footer footer footer footer footer footer footer footer";
+}
+
+.top-bar {
+    color: #f4f1ec;
+    text-align: right;
+    padding: 10px;
+    padding-right: 10vw;
+    grid-area: top-bar;
+    border-bottom: 1px solid #f4f1ec;
+}
+
+.top-bar a {
+    text-decoration: none;
+    color: #2b404d;
+}
+
+.header {
+    grid-area: header;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10vw;
+}
+
+.main-menu {
+    grid-area: main-menu;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.menu-item {
+    list-style-type: none;
+    display: inline;
+    margin: 20px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: #2b404d;
+}
+
+a:hover {
+    color: #19a2e0;
+    transition: ease-in 0.15s;
+}
+
+.menu-item a:hover {
+    text-decoration: underline;
+    transition: ease-in-out 0.15s;
+}
+
+.main-img {
+    display: grid;
+    grid-area: main-img;
+    background-image: url("../img/toy1.jpg");
+    background-position: 80% 25%;
+    margin-bottom: 5vh;
+}
+
+.active a {
+    color: #19a2e0;
+    display: inline;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.content {
+    width: 70vw;
+    color: #f4f1ec;
+    margin-top: 5vh;
+    display: grid;
+    grid-template-columns: 10vw repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.data-name {
+    grid-area: 1 / 2 / 2 / 7;
+}
+
+.data-address {
+    grid-area: 2 / 2 / 3 / 4;
+}
+
+.data-email {
+    grid-area: 2 / 4 / 3 / 7;
+}
+
+.data-facebook {
+    grid-area: 3 / 4 / 4 / 7;
+}
+
+.data-phone {
+    grid-area: 3 / 2 / 4 / 4;
+}
+
+.data-h2 {
+    text-transform: uppercase;
+    color: #19a2e0;
+}
+
+.contact-link {
+    color: #f4f1ec;
+    text-decoration: none;
+}
+
+.icon {
+    font-size: 30px;
+    color: #19a2e0;
+    padding: 10px;
+    float: left;
+}
+
+.home-link {
+    text-decoration: none;
+    color: #2b404d;
+}
