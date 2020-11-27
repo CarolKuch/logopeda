@@ -82,34 +82,35 @@ a:hover {
 }
 
 .content {
-    width: 70vw;
+    padding-left: 10vw;
+    width: 50vw;
     color: #f4f1ec;
     margin-top: 5vh;
     display: grid;
-    grid-template-columns: 10vw repeat(5, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 }
 
 .data-name {
-    grid-area: 1 / 2 / 2 / 7;
+    grid-area: 1 / 1 / 2 / 3;
 }
 
 .data-address {
-    grid-area: 2 / 2 / 3 / 4;
+    grid-area: 2 / 1 / 3 / 2;
 }
 
 .data-email {
-    grid-area: 2 / 4 / 3 / 7;
+    grid-area: 2 / 2 / 3 / 3;
 }
 
 .data-facebook {
-    grid-area: 3 / 4 / 4 / 7;
+    grid-area: 3 / 1 / 4 / 2;
 }
 
 .data-phone {
-    grid-area: 3 / 2 / 4 / 4;
+    grid-area: 3 / 2 / 4 / 3;
 }
 
 .data-h2 {
