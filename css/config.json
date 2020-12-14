@@ -29,6 +29,12 @@
       "css": "location",
       "code": 61489,
       "src": "mfglabs"
+    },
+    {
+      "uid": "5590d2f643b64d2d0757ae660f9c24cb",
+      "css": "stethoscope",
+      "code": 61681,
+      "src": "fontawesome"
     }
   ]
 }

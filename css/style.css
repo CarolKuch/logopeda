@@ -5,7 +5,7 @@ body {
     margin: 0px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 5vh 20vh 70vh 5vh;
+    grid-template-rows: 5vh 20vh auto 15vh;
 }
 
 .top-bar {
@@ -44,7 +44,8 @@ body {
     text-transform: uppercase;
 }
 
-.menu-item a {
+.menu-item a,
+.footer a {
     text-decoration: none;
     color: #2b404d;
 }
@@ -54,17 +55,11 @@ a:hover {
     transition: ease-in 0.15s;
 }
 
-.menu-item a:hover {
-    text-decoration: underline;
-    transition: ease-in-out 0.15s;
-}
-
 .main-img {
     display: grid;
     grid-area: 3 / 1 / 4 / 5;
     background-image: url("../img/toy1.jpg");
     background-position: 80% 25%;
-    margin-bottom: 5vh;
 }
 
 .active a {
@@ -73,7 +68,7 @@ a:hover {
 }
 
 .footer {
-    grid-area: 3 / 1 / 4 / 3;
+    grid-area: 4 / 1 / 5 / 5;
 }
 
 .content {
@@ -81,6 +76,7 @@ a:hover {
     width: 50vw;
     color: #f4f1ec;
     margin-top: 5vh;
+    margin-bottom: 5vh;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -128,4 +124,33 @@ a:hover {
 .home-link {
     text-decoration: none;
     color: #2b404d;
+}
+.footer {
+    grid-area: 4 / 1 / 5 / 5;
+}
+
+.footer-container {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    color: #2b404d;
+    padding-left: 10vw;
+}
+
+.footer-header {
+    color: #19a2e0;
+    font-weight: bold;
+}
+
+.footer-content {
+    font-size: 0.8rem;
+}
+
+.footer-content ul {
+    list-style-type: none;
+}
+
+.data-h3 {
+    color: #19a2e0;
+    font-size: 1.1rem;
 }
