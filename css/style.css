@@ -55,8 +55,7 @@ a:hover {
     transition: ease-in 0.15s;
 }
 
-.main-img {
-    display: grid;
+.main-content {
     grid-area: 3 / 1 / 4 / 5;
     background-image: url("../img/toy1.jpg");
     background-position: 80% 25%;
@@ -73,10 +72,11 @@ a:hover {
 
 .content {
     padding-left: 10vw;
-    width: 50vw;
+    width: 50%;
     color: #f4f1ec;
     margin-top: 5vh;
     margin-bottom: 5vh;
+    min-height: 50vh;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
