@@ -3,32 +3,36 @@
     background-image: none;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 33vw 80px 800px;
+    grid-template-rows: 32vw 80px auto;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    margin-bottom: 5vh;
+    margin-top: 2vh;
 }
 
 .about-pic-container {
+    background-image: url("../img/toy3.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    background-attachment: fixed;
     grid-area: 1 / 1 / 2 / 6;
-}
-.content {
-    margin-top: 0px;
-    width: 80%;
-    color: black;
-    grid-area: 2 / 1 / 4 / 6;
-}
-
-.about-pic {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
 }
 
 .data-name {
     text-align: center;
-    grid-area: 1 / 1 / 2 / 6;
+    grid-area: 2 / 1 / 3 / 6;
+    font-size: 24px;
 }
 
 .story-about {
-    grid-area: 2 / 1 / 3 / 6;
+    margin-right: auto;
+    margin-left: auto;
+    grid-area: 3 / 1 / 4 / 6;
+}
+
+.story-about-item {
+    height: auto;
+    width: 800px;
+    margin: 5vh;
 }
