@@ -3,17 +3,15 @@
     background-image: none;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 32vw 80px auto;
+    grid-template-rows: 80vh 80px auto;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    margin-bottom: 5vh;
-    margin-top: 2vh;
 }
 
 .about-pic-container {
     background-image: url("../img/toy3.jpg");
     background-repeat: no-repeat;
-    background-position: top;
+    background-position: 0 20px;
     background-size: cover;
     background-attachment: fixed;
     grid-area: 1 / 1 / 2 / 6;
@@ -26,13 +24,38 @@
 }
 
 .story-about {
-    margin-right: auto;
-    margin-left: auto;
     grid-area: 3 / 1 / 4 / 6;
 }
 
-.story-about-item {
-    height: auto;
-    width: 800px;
-    margin: 5vh;
+.story-about-logopedist,
+.story-about-gabinet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "pict text";
+    grid-gap: 0px;
+    vertical-align: center;
+}
+
+.story-about-logopedist-pic-div,
+.story-about-gabinet-pic-div {
+    grid-area: pict;
+    text-align: center;
+}
+
+.story-about-logopedist-pic,
+.story-about-gabinet-pic {
+    width: 80%;
+    text-align: center;
+}
+
+.story-about-logopedist-text,
+.story-about-gabinet-text {
+    grid-area: text;
+    font-size: 18px;
+    padding: 20px;
+}
+
+.story-about-logopedist-text p {
+    margin-bottom: 5vh;
 }
