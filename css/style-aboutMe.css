@@ -33,8 +33,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas: "pict text";
-    grid-gap: 0px;
-    vertical-align: center;
+    margin-top: 10vh;
 }
 
 .story-about-logopedist-pic-div,
@@ -45,7 +44,7 @@
 
 .story-about-logopedist-pic,
 .story-about-gabinet-pic {
-    width: 80%;
+    width: 90%;
     text-align: center;
 }
 
@@ -56,6 +55,54 @@
     padding: 20px;
 }
 
-.story-about-logopedist-text p {
+.story-about-logopedist-text p,
+.story-about-gabinet-text p,
+.story-about-techniques {
     margin-bottom: 5vh;
+}
+
+.story-about-gabinet-hours {
+    text-align: center;
+}
+
+li {
+    list-style-type: none;
+}
+
+h3 {
+    margin-block-start: 0px;
+    font-size: 24px;
+}
+
+.story-about-techniques {
+    margin-left: 5%;
+    margin-right: 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "text text text text"
+        "pic1 pic2 pic3 pic4";
+    margin-top: 10vh;
+}
+
+.story-about-techniques-text {
+    grid-area: text;
+    padding: 5%;
+}
+
+.story-about-techniques-pic1 {
+    grid-area: pic1;
+}
+
+.story-about-techniques-pic2 {
+    grid-area: pic2;
+}
+
+.story-about-techniques-pic3 {
+    grid-area: pic3;
+}
+
+.story-about-techniques-pic4 {
+    grid-area: pic4;
 }
