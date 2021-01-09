@@ -52,7 +52,8 @@
 .story-about-gabinet-text {
     grid-area: text;
     font-size: 18px;
-    padding: 20px;
+    padding-right: 8vw;
+    padding-left: 2vw;
 }
 
 .story-about-logopedist-text p,

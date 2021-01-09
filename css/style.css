@@ -39,27 +39,29 @@ body {
 
 .header {
     grid-area: 2 / 1 / 3 / 3;
-    margin-top: auto;
-    margin-bottom: auto;
     margin-left: 10vw;
+}
+
+.main-menu-hamburger{
+    visibility: hidden;
 }
 
 .main-menu {
     grid-area: 2 / 3 / 3 / 5;
-    text-align: center;
-    margin-top: auto;
-    margin-bottom: auto;
+      
 }
 
 .menu-item {
     list-style-type: none;
-    display: inline;
+    display: inline-block;
+    height: 60px;
     margin: 20px;
     font-size: 1.3rem;
     text-transform: uppercase;
+    text-align: center;  
 }
 
-.menu-item a,
+.main-menu-list > .menu-item a,
 .footer a {
     text-decoration: none;
     color: #2b404d;
@@ -76,9 +78,8 @@ a:hover {
     background-position: 80% 25%;
 }
 
-.active a {
+.active {
     color: #19a2e0;
-    display: inline;
 }
 
 .footer {
@@ -88,14 +89,13 @@ a:hover {
 
 .content {
     padding-left: 10vw;
-    width: 50%;
+    width: 60%;
     color: #f4f1ec;
     margin-top: 5vh;
-    margin-bottom: 5vh;
     min-height: 50vh;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: 80px auto auto;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 }
@@ -169,4 +169,118 @@ a:hover {
 .data-h3 {
     color: #19a2e0;
     font-size: 1.1rem;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+
+.visible{
+    visibility: visible;
+}
+
+.main-menu-close{
+    padding-right: 5px;
+    padding-top: 5px;
+    text-align: right;
+}
+
+.main-menu-close-trigger{
+    height: 20px;
+    width: 20px;
+    
+    border: 1px solid white;
+    
+}
+
+.hamburger-clicked{
+    background-color: #2b404d;
+    z-index: 1;
+    height: 400px;
+    width: 200px;
+    color: white;
+    text-align: center;
+    padding: 0px;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+
+.hamburger-clicked > .menu-item a{
+    color: white;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.hamburger-clicked > .menu-item a:hover{
+    color: #19a2e0;
+    transition: ease-in 0.15s;
+}
+
+@media (max-width: 1150px){
+    .main-menu{
+        grid-area: 2 / 2 / 3 / 5;
+        margin-left: auto;
+        margin-right: 3vw;
+    }
+
+    .header{
+        grid-area: 2 / 1 / 3 / 3;
+        margin-left: 4vw;
+    }
+
+    .content{
+        padding-left: 4vw;
+    }
+    
+    .footer-container{
+        padding-left: 4vw;
+    }
+    
+    .menu-item{
+        margin: 15px;
+    }
+   
+}
+
+
+@media (max-width: 751px){
+
+    .main-menu-list{
+        visibility: hidden;
+    }
+
+    
+    .main-menu{
+       grid-area: 2 / 3 / 3 / 5;
+       text-align: center;  
+       position: relative;
+    }
+
+    .main-menu-hamburger{
+        visibility: visible;
+        height: 40px;
+        position: absolute;
+        top: 30%;
+        right: 10%;
+    }
+    .main-menu-close{
+        display: block;
+    }
+}
+
+@media (min-width: 751px){
+   
+    .main-menu-list{
+        visibility: visible;
+    }
+    .main-menu-hamburger{
+        visibility: hidden;
+    }
+    .main-menu-close{
+        display: inline;
+    }
+
 }
