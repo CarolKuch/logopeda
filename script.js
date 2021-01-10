@@ -1,49 +1,75 @@
-
-    const topBar = document.getElementsByClassName('top-bar-name')[0];
-    let hamburgerHandler = document.getElementsByClassName('main-menu-hamburger')[0];
+const topBar = document.getElementsByClassName('top-bar-name')[0];
+let hamburgerHandler = document.getElementsByClassName('main-menu-hamburger')[0];
     let mainNavList = document.getElementsByClassName('main-menu-list')[0];
     let mainMenuClose = document.getElementsByClassName('main-menu-close-trigger')[0];
-    let mainMenuVisibility = 0;
 
+    /*Used as a flag in small and medium display resolutions. 
+        0 - hamburger menu type; 
+        1 - menu after dropdown*/
+    let isDropdown = 0;
+
+    let displayResolution = window.innerWidth;
+    let menuState;
+   
+    //Changes opacity of top-bar-name in top-bar. Top-bar-name is visible if user scrolled enough a page.
     const setTopBarNameVisibility = () => {
-        if (window.pageYOffset > 10)
+        if (window.pageYOffset > 50)
             topBar.style.opacity = "1";
         else
             topBar.style.opacity = "0";
-    } 
+    }  
 
-    const setMainMenuVisibility = () => {
-        if(mainMenuVisibility === 0){
-            mainNavList.removeAttribute('class', 'main-menu-list');
-            mainNavList.setAttribute('class', 'hamburger-clicked');
-            mainMenuClose.removeAttribute('class', 'hidden');
-            mainMenuClose.setAttribute('class', 'visible main-menu-close-trigger');
-            hamburgerHandler.removeAttribute('class', 'visible');
-            hamburgerHandler.setAttribute('class', 'hidden');
-            mainMenuVisibility = 1;
-        }
-        else if(mainMenuVisibility === 1) {
-             mainNavList.removeAttribute('class', 'hamburger-clicked');
-             mainNavList.setAttribute('class', 'hidden hamburger-clicked');            
-             mainMenuClose.removeAttribute('class', 'visible');
-             mainMenuClose.setAttribute('class', 'hidden main-menu-close-trigger');
-             hamburgerHandler.removeAttribute('class', 'hidden');
-             hamburgerHandler.setAttribute('class', 'main-menu-hamburger');
-             mainMenuVisibility = 0;
+    let MainMenuType = {
+        hamburger: 'hamburger',
+        dropdown: 'dropdown',
+        large: 'large'
+    };
+
+    /*Sets the type of menu, depending of:
+        - display resolution,
+        - which one button (hamburger or close-trigger) was clicked at the last time:
+            -> hamburger menu type is a default for small and medium display resolutions.*/
+    let setMenuState = () => {        
+        if (displayResolution > 750)
+            menuState = MainMenuType.large;         
+        else if (isDropdown)
+            menuState = MainMenuType.dropdown;
+        else
+            menuState = MainMenuType.hamburger;      
+        
+        executeMenuState(menuState);
+    }
+
+    let executeMenuState = () => {
+        if (menuState === MainMenuType.large) {
+            mainNavList.className = 'main-menu-list';
+            mainMenuClose.className = 'main-menu-close-trigger hidden';
+            hamburgerHandler.className = 'main-menu-hamburger hidden';
+        }else if (menuState === MainMenuType.dropdown) {
+            mainNavList.className = 'hamburger-clicked';
+            mainMenuClose.className = 'main-menu-close-trigger visible';
+            hamburgerHandler.className = 'main-menu-hamburger hidden';
+        }else {
+            mainNavList.className = 'hidden';            
+            mainMenuClose.className = 'main-menu-close-trigger hidden';
+            hamburgerHandler.className = 'main-menu-hamburger visible';
         }
     }
 
-    const setMenuType = () => {
-        if((window.innerWidth > 751) && (mainNavList.classList.contains('hamburger-clicked'))) {
-            mainNavList.removeAttribute('class', 'hamburger-clicked');
-            mainNavList.setAttribute('class', 'main-menu-list');
-            mainMenuClose.setAttribute('class', 'hidden');
-            hamburgerHandler.setAttribute('class', 'main-menu-hamburger hidden');
-            mainMenuClose.setAttribute('class', 'hidden main-menu-close-trigger');
-        }
-    }
+    //Sets menuState automatically after refreshing the page.
+    setMenuState();
 
-    window.addEventListener("scroll", setTopBarNameVisibility);
-    hamburgerHandler.addEventListener('click', setMainMenuVisibility);    
-    mainMenuClose.addEventListener('click', setMainMenuVisibility);
-    window.addEventListener("resize", setMenuType);
+    //Launches setTopBarNameVisibility (used as a callback) when user scrolls.
+    window.addEventListener('scroll', setTopBarNameVisibility);
+
+    window.addEventListener('resize', () => {
+        displayResolution = window.innerWidth;
+        setMenuState()});
+
+    hamburgerHandler.addEventListener('click', () => {
+        isDropdown = 1;
+        setMenuState()});
+
+    mainMenuClose.addEventListener('click', () => {
+        isDropdown = 0;
+        setMenuState()});
