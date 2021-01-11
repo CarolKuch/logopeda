@@ -1,7 +1,7 @@
 # Logopeda Wroclaw
 > Webpage created with HTML, CSS, JavaScript.
 
-##Table of Contents
+## Table of Contents
 
 * [General info](#general-info)
 * [Screenshots](#screenshots)
@@ -10,24 +10,24 @@
 * [Status](#status)
 * [Contact](#contact)
 
-##General info
+## General info
 This project is a simple webpage created for a logopedist from Wroclaw. 
 
-##Screenshots
+## Screenshots
 ![Example screenshot](./img/screenshot.png)
 
-##Technologies
+## Technologies
 * HTML5
 * CSS3
 * Javascript ES6
 * files.svg were created in Adobe XD,
 * Visual Studio Code.
 
-##Setup
+## Setup
 To run my project open index.html in webbrowser.
 
-##Status
+## Status
 Project is: _in progress_
 
-##Contact
+## Contact
 Created by [@CarolKuch](https://github.com/CarolKuch)
