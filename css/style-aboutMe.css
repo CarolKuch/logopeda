@@ -3,7 +3,7 @@
     background-image: none;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 80vh 80px auto;
+    grid-template-rows: 80vh 80px auto auto;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 }
@@ -28,7 +28,8 @@
 }
 
 .story-about-logopedist,
-.story-about-gabinet {
+.story-about-gabinet,
+.story-about-location {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
@@ -37,33 +38,50 @@
 }
 
 .story-about-logopedist-pic-div,
-.story-about-gabinet-pic-div {
+.story-about-gabinet-pic-div,
+.story-about-location-pic-div {
     grid-area: pict;
     text-align: center;
 }
 
-.story-about-logopedist-pic,
-.story-about-gabinet-pic {
+.pic {
     width: 90%;
     text-align: center;
 }
 
-.story-about-logopedist-text,
-.story-about-gabinet-text {
+.story-text {
     grid-area: text;
     font-size: 18px;
-    padding-right: 8vw;
-    padding-left: 2vw;
+    padding-right: 5vw;
 }
 
-.story-about-logopedist-text p,
-.story-about-gabinet-text p,
-.story-about-techniques {
+.story-about-logopedist-text,
+.story-about-location-text {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr;
+}
+
+.story-about-gabinet-text {
+    text-align: center;
+
+    padding: 0px;
+}
+
+.story-text p {
     margin-bottom: 5vh;
+}
+
+.story-text h3 {
+    text-align: center;
 }
 
 .story-about-gabinet-hours {
     text-align: center;
+}
+
+.story-about-gabinet-text ul {
+    padding: 0px;
 }
 
 li {
@@ -71,39 +89,16 @@ li {
 }
 
 h3 {
-    margin-block-start: 0px;
     font-size: 24px;
+    margin-top: 10px;
 }
 
-.story-about-techniques {
-    margin-left: 5%;
-    margin-right: 5%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-        "text text text text"
-        "pic1 pic2 pic3 pic4";
-    margin-top: 10vh;
-}
+@media (max-width: 1220px) {
+    .about-pic-container {
+        background-position: 80%;
+    }
 
-.story-about-techniques-text {
-    grid-area: text;
-    padding: 5%;
-}
-
-.story-about-techniques-pic1 {
-    grid-area: pic1;
-}
-
-.story-about-techniques-pic2 {
-    grid-area: pic2;
-}
-
-.story-about-techniques-pic3 {
-    grid-area: pic3;
-}
-
-.story-about-techniques-pic4 {
-    grid-area: pic4;
+    .pic {
+        width: 98%;
+    }
 }
