@@ -9,7 +9,7 @@ body {
     margin: 0px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 5vh 20vh auto 15vh;
+    grid-template-rows: 5vh 20vh auto auto;
 }
 
 .top-bar {
@@ -28,6 +28,7 @@ body {
 .top-bar a {
     text-decoration: none;
     color: #2b404d;
+    font-size: 16px;
 }
 
 .top-bar-link {
@@ -63,7 +64,7 @@ body {
     display: inline-block;
     height: 60px;
     margin: 20px;
-    font-size: 1.3rem;
+    font-size: 20px;
     text-transform: uppercase;
     text-align: center;  
 }
@@ -72,6 +73,10 @@ body {
 .footer a {
     text-decoration: none;
     color: #2b404d;
+}
+
+.main-menu-list > .active a{
+    color: #19a2e0;
 }
 
 a:hover, .menu-item a:hover {
@@ -83,10 +88,6 @@ a:hover, .menu-item a:hover {
     grid-area: 3 / 1 / 4 / 5;
     background-image: url("../img/toy1.jpg");
     background-position: 80% 25%;
-}
-
-.active {
-    color: #19a2e0;
 }
 
 .footer {
@@ -109,6 +110,8 @@ a:hover, .menu-item a:hover {
 
 .data-name {
     grid-area: 1 / 1 / 2 / 3;
+    text-transform: uppercase;
+    color: #19a2e0;
 }
 
 .data-address {
@@ -125,11 +128,6 @@ a:hover, .menu-item a:hover {
 
 .data-phone {
     grid-area: 3 / 2 / 4 / 3;
-}
-
-.data-h2 {
-    text-transform: uppercase;
-    color: #19a2e0;
 }
 
 .contact-link {
@@ -151,10 +149,6 @@ a:hover, .menu-item a:hover {
 
 .footer {
     grid-area: 4 / 1 / 5 / 5;
-}
-
-.footer-container {
-    margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     color: #2b404d;
@@ -164,10 +158,12 @@ a:hover, .menu-item a:hover {
 .footer-header {
     color: #19a2e0;
     font-weight: bold;
+    margin: 10px 0px;
 }
 
 .footer-content {
-    font-size: 0.8rem;
+    font-size: 12px;
+    padding-bottom: 10px;
 }
 
 .footer-content ul {
@@ -176,7 +172,7 @@ a:hover, .menu-item a:hover {
 
 .data-h3 {
     color: #19a2e0;
-    font-size: 1.1rem;
+    font-size: 22px ;
 }
 
 .hidden{

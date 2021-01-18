@@ -32,7 +32,6 @@
 .story-about-location {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
     grid-template-areas: "pict text";
     margin-top: 10vh;
 }
@@ -49,10 +48,16 @@
     text-align: center;
 }
 
+.map {
+    width: 90%;
+    height: 400px;
+    border: 0;
+}
+
 .story-text {
     grid-area: text;
     font-size: 18px;
-    padding-right: 5vw;
+    padding: 0vw 5vw;
 }
 
 .story-about-logopedist-text,
@@ -64,7 +69,6 @@
 
 .story-about-gabinet-text {
     text-align: center;
-
     padding: 0px;
 }
 
@@ -100,5 +104,22 @@ h3 {
 
     .pic {
         width: 98%;
+    }
+}
+@media (max-width: 1100px){
+    .story-about-logopedist,
+    .story-about-gabinet,
+    .story-about-location {
+        grid-template-columns: auto;
+        grid-template-areas: "pict" "text";
+}
+
+    .story-about-logopedist-pic{
+        height: 60vw;
+        width: auto;
+    }
+
+    .story-text{
+        text-align: center;
     }
 }
